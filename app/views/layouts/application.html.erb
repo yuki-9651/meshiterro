@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  
   <head>
     <title>Meshiterro</title>
     <%= csrf_meta_tags %>
@@ -9,16 +10,21 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  
 
   <body class="d-flex flex-column vh-100">
     <header class="shadow-sm">
       <nav class="navbar navbar-expand-lg navbar-light">
+       
         <div class="container">
           <a class="navbar-brand p-3" href="/"><%= image_tag('logo.png') %></a>
+         
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
+            
           </button>
+         
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
@@ -41,9 +47,13 @@
             <% end %>
             </ul>
           </div>
+          
         </div>
+        
       </nav>
     </header>
+    
+    
     <main class="mb-auto">
     <%= yield %>
     </main>
@@ -51,7 +61,7 @@
       <div class="container">
         <div class="row no-gutters">
           <div class="col-md-4">
-            <p>善良な市民同士で無差別に食欲を煽るSNS</p>
+            <p>善良な市民同士で無差別に食欲を煽るSNS15464</p>
             <%= image_tag('logo-white.png') %>
           </div>
           <div class="col-md-8">
@@ -69,4 +79,6 @@
       </div>
     </footer>
   </body>
+  
+  
 </html>
