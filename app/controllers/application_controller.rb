@@ -11,10 +11,16 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(resource)
     about_path
   end
+  
+  private
+ 
+  def admin_controller?
+    self.class.module_parent_name == 'Admin'
+  end
 
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email])
   end
 end
